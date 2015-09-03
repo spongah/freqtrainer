@@ -1,0 +1,17 @@
+<h1>GUESS THE FREQUENCY!</h1>
+
+<% @frequencies.each do |freq| %>
+	
+	<% if freq == @playing %>
+		<%= link_to(freq.to_s + "hz", welcome_success_path, class: "btn btn-primary form-control") %>
+	<% else %>
+		<%= link_to(freq.to_s + "hz", welcome_fail_path, class: "btn btn-primary form-control") %>
+	<% end %>
+
+<% end %>
+
+
+
+<div id="divAudioPlayer" style="visibility: hidden">
+	<%= mp3_player(@path) %>
+</div>
