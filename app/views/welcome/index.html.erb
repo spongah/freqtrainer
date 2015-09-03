@@ -1,4 +1,4 @@
-<h1>GUESS THE FREQUENCY!</h1>
+<h1>GUESS THE FREQUENCY! <button onclick="var mySound = soundManager.createSound({url: '<%= @path %>'});mySound.play()" class="btn btn-primary">REPLAY</button></h1>
 
 <% @frequencies.each do |freq| %>
 	
@@ -11,7 +11,26 @@
 <% end %>
 
 
+<!-- for autoplay, body plays it the first time, then the script plays it the rest of the time -->
+<body onload="var mySound = soundManager.createSound({url: '<%= @path %>'});mySound.play()"></body>
+<script type="text/javascript">
+    var mySound = soundManager.createSound({url: '<%= @path %>'});
+    mySound.play()
+</script>
 
+
+
+<!-- AUTO PLAY, works except initial load for some reason?
+<script type="text/javascript">
+    var mySound = soundManager.createSound({url: '<%= @path %>'});
+    mySound.play()
+</script>
+-->
+
+
+
+<!--
 <div id="divAudioPlayer" style="visibility: hidden">
 	<%= mp3_player(@path) %>
 </div>
+-->
