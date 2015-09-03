@@ -1,4 +1,4 @@
-<h1>GUESS THE FREQUENCY! <button onclick="var mySound = soundManager.createSound({url: '<%= @path %>'});mySound.play()" class="btn btn-primary">REPLAY</button></h1>
+<h1>GUESS THE FREQUENCY! <button onclick="var mySound = soundManager.createSound({url: '<%= @path %>'});mySound.play()" class="btn btn-primary">PLAY</button></h1>
 
 <% @frequencies.each do |freq| %>
 	
@@ -11,8 +11,7 @@
 <% end %>
 
 
-<!-- for autoplay, body plays it the first time, then the script plays it the rest of the time -->
-<body onload="var mySound = soundManager.createSound({url: '<%= @path %>'});mySound.play()"></body>
+
 <script type="text/javascript">
     var mySound = soundManager.createSound({url: '<%= @path %>'});
     mySound.play()
