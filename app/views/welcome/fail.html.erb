@@ -1,3 +1,7 @@
+<% session[:wrong] += 1 %>
+<h2>Correct: <%= session[:correct] %></h2>
+<h2>Wrong: <%= session[:wrong] %></h2><br><br>
+
 <h1>WRONG it was <%= @playing %>!</h1>
 <%= link_to("New Tone", welcome_index_path, class: "btn btn-primary form-control") %>
 

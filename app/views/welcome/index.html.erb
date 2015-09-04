@@ -1,3 +1,8 @@
+<% session[:correct] ||=0 %>
+<% session[:wrong] ||=0 %>
+<h2>Correct: <%= session[:correct] %></h2>
+<h2>Wrong: <%= session[:wrong] %></h2>
+
 <h1>GUESS THE FREQUENCY! <button onclick="var mySound = soundManager.createSound({url: '<%= @path %>'});mySound.play()" class="btn btn-primary">PLAY</button></h1>
 
 <% @frequencies.each do |freq| %>
